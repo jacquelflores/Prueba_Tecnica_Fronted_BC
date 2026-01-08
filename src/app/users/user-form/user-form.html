@@ -1,0 +1,20 @@
+<p>user-form works!</p>
+<div class="container mt-5" style="max-width: 500px;">
+  <h2>{{ id ? 'Editar Usuario' : 'Crear Usuario' }}</h2>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div *ngIf="!id" class="mb-3">
+      <input formControlName="username" type="text" class="form-control" placeholder="Username">
+    </div>
+    <div class="mb-3">
+      <input formControlName="email" type="email" class="form-control" placeholder="Email">
+    </div>
+    <div *ngIf="!id" class="mb-3">
+      <input formControlName="password" type="password" class="form-control" placeholder="Password">
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" formControlName="estado" class="form-check-input">
+      <label class="form-check-label">Activo</label>
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Guardar</button>
+  </form>
+</div>
